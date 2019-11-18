@@ -78,7 +78,7 @@ func arithmetic(i int) {
 		defer Wg.Done()
 		mutex.Lock()
 		taskNow := taskQueue[index]
-		log.Printf("Взята задача %v", taskQueue[index].Id) // Проверка последовательности выполнения задач
+		log.Printf("Взята задача %v", taskNow.Id) // Проверка последовательности выполнения задач
 		index++
 		mutex.Unlock()
 		result := taskNow.N1 // Переменная для хранения результата прогрессии
