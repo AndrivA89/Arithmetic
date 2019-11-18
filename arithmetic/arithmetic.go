@@ -9,7 +9,7 @@ import (
 )
 
 /*
-	timeClock - Структура для времени
+	TimeClock - Структура для времени
 */
 type TimeClock struct {
 	Hour   int `json:"Hour,omitempty"`
@@ -127,7 +127,7 @@ func errorMsg(err error, comment string) {
 }
 
 /*
-setWorkers - Установка количества воркеров
+SetWorkers - Установка количества воркеров
 */
 func SetWorkers(tempN int) {
 	n = tempN
@@ -138,7 +138,7 @@ func SetWorkers(tempN int) {
 }
 
 /*
-mainPage - Обработка главной страницы
+MainPage - Обработка главной страницы
 */
 func MainPage(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
@@ -146,7 +146,7 @@ func MainPage(w http.ResponseWriter, r *http.Request) {
 }
 
 /*
-addTask - Обработчик добавления новой задачи
+AddTask - Обработчик добавления новой задачи
 */
 func AddTask(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
@@ -165,7 +165,7 @@ func AddTask(w http.ResponseWriter, r *http.Request) {
 }
 
 /*
-listTasks - Обработка вывода списка задач
+ListTasks - Обработка вывода списка задач
 */
 func ListTasks(w http.ResponseWriter, r *http.Request) {
 	for i := 0; i < amount; i++ {
