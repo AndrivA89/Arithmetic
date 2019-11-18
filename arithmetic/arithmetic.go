@@ -94,11 +94,9 @@ func arithmetic(i int) {
 		t = time.Now()
 		taskNow.TimeDone.Hour, taskNow.TimeDone.Minute, taskNow.TimeDone.Second = t.Clock()
 		taskNow.Status = "Done"
-		Wg.Add(1)
 		func(TaskToDel *Task) {
 			_ = time.AfterFunc(time.Millisecond*time.Duration((taskNow.TTL)*1000), func() {
 				delTaskTotime(TaskToDel)
-				Wg.Done()
 			})
 		}(taskNow)
 	}
