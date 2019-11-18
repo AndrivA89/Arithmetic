@@ -109,6 +109,7 @@ func delTaskTotime(TaskToDel *Task) {
 	mutex.Lock()
 	taskQueue = append(taskQueue[:TaskToDel.Id], taskQueue[TaskToDel.Id+1:]...)
 	amount--
+	index--
 	for i := TaskToDel.Id; i < amount; i++ {
 		taskQueue[i].Id = i
 	}
